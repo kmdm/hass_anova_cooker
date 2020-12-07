@@ -1,0 +1,14 @@
+{
+  "domain": "anova_cooker",
+  "name": "ANOVA Precision Cooker",
+  "config_flow": true,
+  "documentation": "https://www.home-assistant.io/integrations/anova_cooker",
+  "requirements": ["aionova==0.0.5"],
+  "ssdp": [],
+  "zeroconf": [],
+  "homekit": {},
+  "dependencies": [],
+  "codeowners": [
+    "@kmdm"
+  ]
+}

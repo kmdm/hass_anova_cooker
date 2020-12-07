@@ -1,0 +1,6 @@
+stop_alarm:
+  description: Stops the alarm from sounding
+  fields:
+    entity_id:
+      description: 'Name of the entity to stop the alarm on'
+      example: 'climate.anova_f56_aabbccddeef'
