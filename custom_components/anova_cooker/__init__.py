@@ -14,7 +14,7 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant, callback
 
 from .const import DOMAIN
-from ...helpers.update_coordinator import DataUpdateCoordinator, T
+from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, T
 
 CONFIG_SCHEMA = vol.Schema({DOMAIN: vol.Schema({})}, extra=vol.ALLOW_EXTRA)
 

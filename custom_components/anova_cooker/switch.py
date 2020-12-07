@@ -1,11 +1,11 @@
 from aionova import AnovaCookerLegacy
+from homeassistant.components.switch import SwitchEntity
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
+from homeassistant.helpers.update_coordinator import CoordinatorEntity, DataUpdateCoordinator
 from typing import Optional, Any
 
 from .const import DOMAIN
-from homeassistant.helpers.update_coordinator import CoordinatorEntity, DataUpdateCoordinator
-from ..switch import SwitchEntity
 
 
 async def async_setup_entry(hass: HomeAssistant, config_entry: ConfigEntry, async_add_entities: callable):
