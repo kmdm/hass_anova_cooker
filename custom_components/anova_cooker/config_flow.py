@@ -4,6 +4,7 @@ import logging
 
 import voluptuous as vol
 
+from aionova.exceptions import *
 from homeassistant import config_entries, core, exceptions
 
 from .const import DOMAIN  # pylint:disable=unused-import
@@ -19,10 +20,12 @@ async def validate_input(hass: core.HomeAssistant, data):
     try:
         cooker = aionova.AnovaCookerLegacy(data['cooker_id'], data['cooker_secret'])
         await cooker.update_state()
+    except AnovaCookerOfflineException:
+        pass
     except:
         raise InvalidAuth
-    else:
-        return {"title": data['cooker_id']}
+
+    return {"title": data['cooker_id']}
 
 
 class AnovaCookerFlow(config_entries.ConfigFlow, domain=DOMAIN):

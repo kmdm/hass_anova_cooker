@@ -51,8 +51,12 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
 
     async def async_update_data():
         async with async_timeout.timeout(10):
-            await cooker.update_state()
-            return cooker.state
+            try:
+                await cooker.update_state()
+            except RuntimeError:
+                pass
+            else:
+                return cooker.state
 
     coordinator = AnovaDataUpdateCoordinator(
         hass,
